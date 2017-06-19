@@ -1,6 +1,7 @@
 #ifndef WIDGET_H
 #define WIDGET_H
-
+#include <QMap>
+#include <QSet>
 #include <QWidget>
 
 namespace Ui {
@@ -22,6 +23,7 @@ private slots:
 private:
     Ui::Widget *ui;
     QUdpSocket *mSocket;
+    QString username;
 };
 
 #endif // WIDGET_H

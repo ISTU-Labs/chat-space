@@ -8,6 +8,7 @@ Widget::Widget(QWidget *parent) :
 {
     ui->setupUi(this);
     mSocket = new QUdpSocket(this);
+
 }
 
 Widget::~Widget()
@@ -17,7 +18,10 @@ Widget::~Widget()
 
 void Widget::on_send_clicked()
 {
-    auto datagrama = ui->msj->text().toUtf8();
-    mSocket->writeDatagram(datagrama, QHostAddress::Broadcast,
+    auto message = ui->msj->text().toUtf8();
+    auto nickname = ui->nickname.text().toUtf8();
+    auto datagram = nickname + ":" + message;
+    mSocket->writeDatagram(datagram, QHostAddress::Broadcast,
                            ui->port->value());
+
 }

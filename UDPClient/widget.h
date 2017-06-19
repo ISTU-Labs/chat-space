@@ -23,6 +23,7 @@ private slots:
 private:
     Ui::Widget *ui;
     QUdpSocket *mSocket;
+    QString username;
 };
 
 #endif // WIDGET_H
